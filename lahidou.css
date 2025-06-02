@@ -1,0 +1,230 @@
+/* Global styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #444;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #740404, #ffffff);
+    color: white;
+    padding: 30px 0; /* Réduit la hauteur du header */
+    text-align: center;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 5px solid #000000cb;
+}
+
+header h1 {
+    font-size: 2.5em; /* Réduit la taille du texte du titre */
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.logo img {
+    max-width: 120px; /* Réduit la taille du logo */
+    height: auto;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em; /* Réduit la taille des liens */
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.4s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #f7f7f7;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #f7f7f7;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Products Section */
+.produits {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 2fr)); /* Réduit la taille des produits */
+    gap: 30px;
+    padding: 20px;
+}
+
+.produit {
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(210, 10, 10, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    padding: 15px; /* Réduit l'espacement intérieur des produits */
+}
+
+.produit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.produit img {
+    width: 100%;
+    height: auto;
+    border-bottom: 5px solid #f7f7f7;
+    transition: transform 0.3s ease;
+}
+
+.produit:hover img {
+    transform: scale(1.05);
+}
+
+.produit .nom-produit {
+    font-size: 1.1em; /* Réduit la taille du nom du produit */
+    font-weight: 600;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+.produit .prix-produit {
+    font-size: 1.1em; /* Réduit la taille du prix */
+    color: #e67e22;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.ajouter-panier {
+    background-color: #931c09;
+    color: white;
+    border: none;
+    padding: 12px 20px; /* Réduit la taille du bouton */
+    font-size: 1em;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ajouter-panier:hover {
+    background-color: #d35400;
+    transform: translateY(-5px);
+}
+
+.ajouter-panier:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #882109;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 30px 10px;
+    margin-top: 40px;
+    font-size: 0.9em;
+    border-top: 5px solid #c36009;
+}
+
+footer a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f7f7f7;
+}
+
+/* Buttons */
+.whatsapp-btn, .call-btn {
+    display: inline-block;
+    margin: 8px 5px 0 0;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+}
+
+.call-btn {
+    background: #1e90ff;
+}
+
+.call-btn:hover {
+    background: #005fa3;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .produit {
+        padding: 20px;
+    }
+
+    .ajouter-panier {
+        font-size: 1em;
+        padding: 12px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 2.2em; /* Réduit la taille du titre sur petits écrans */
+    }
+
+    .produit .nom-produit {
+        font-size: 1em;
+    }
+
+    .produit .prix-produit {
+        font-size: 1em;
+    }
+}

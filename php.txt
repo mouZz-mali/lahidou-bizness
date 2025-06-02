@@ -1,0 +1,43 @@
+<?php
+session_start();  // Démarre la session pour le panier
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Récupérer les données du formulaire de manière sécurisée
+    $produit = isset($_POST['produit']) ? trim(htmlspecialchars($_POST['produit'])) : '';
+    $prix = isset($_POST['prix']) ? trim(htmlspecialchars($_POST['prix'])) : '';
+    
+    // Validation des données
+    if (empty($produit) || empty($prix)) {
+        echo json_encode(["error" => "Données manquantes."]);
+        exit;
+    }
+    
+    // Vérifier si le prix est un nombre valide et positif
+    if (!is_numeric($prix) || $prix <= 0) {
+        echo json_encode(["error" => "Le prix doit être un nombre valide et positif."]);
+        exit;
+    }
+    
+    // Formatage du prix en nombre avec des milliers séparés
+    $prix_formatte = number_format($prix, 0, ',', ' ') . ' FCFA';
+    
+    // Ajouter le produit au panier (session)
+    if (!isset($_SESSION['panier'])) {
+        $_SESSION['panier'] = [];
+    }
+    
+    // Ajouter le produit et son prix dans le panier
+    $_SESSION['panier'][] = [
+        'produit' => $produit,
+        'prix' => $prix
+    ];
+    
+    // Renvoi de la réponse JSON avec le panier mis à jour
+    echo json_encode([
+        "message" => "Le produit '$produit' a été ajouté au panier pour $prix_formatte.",
+        "panier" => $_SESSION['panier']  // Retourne également l'état actuel du panier
+    ]);
+} else {
+    echo json_encode(["error" => "Méthode de requête invalide."]);
+}
+?>
