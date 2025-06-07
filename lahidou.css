@@ -197,34 +197,57 @@ footer a:hover {
 
 /* Responsiveness */
 @media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+    .produits {
+        padding: 20px 5px;
+    }
     .grid-container {
         grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 5px;
     }
-
     .produit {
-        padding: 20px;
+        padding: 8px;
     }
-
-    .ajouter-panier {
-        font-size: 1em;
-        padding: 12px 22px;
+    .produit img {
+        border-bottom: 3px solid #f7f7f7;
     }
 }
 
 @media (max-width: 480px) {
+    header h1, .slogan {
+        font-size: 1.2em;
+    }
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 0 5px 8px 5px;
+    }
     .grid-container {
         grid-template-columns: 1fr;
+        gap: 10px;
     }
-
-    header h1 {
-        font-size: 2.2em; /* Réduit la taille du titre sur petits écrans */
+    .produit {
+        padding: 5px;
     }
-
-    .produit .nom-produit {
-        font-size: 1em;
+    .produit img {
+        max-width: 100%;
+        height: auto;
     }
-
-    .produit .prix-produit {
-        font-size: 1em;
+    .whatsapp-btn, .call-btn {
+        font-size: 0.95em;
+        padding: 6px 10px;
+    }
+    footer {
+        font-size: 0.9em;
+        padding: 10px 2px;
     }
 }
