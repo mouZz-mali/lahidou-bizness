@@ -234,6 +234,34 @@ button[onclick*="scrollTo"]:hover {
     transform: scale(1.15) rotate(-10deg);
 }
 
+/* Chameleon Animation */
+#chameleon-anim {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#chameleon-img {
+    width: 90px;
+    height: auto;
+    position: relative;
+    z-index: 2;
+}
+
+#chameleon-tongue {
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    width: 0;
+    height: 8px;
+    background: linear-gradient(90deg, #ffb3b3 60%, #ff4d4d 100%);
+    border-radius: 4px;
+    z-index: 1;
+    transition: width 0.7s cubic-bezier(.23,1.02,.43,.99);
+}
+
 /* Responsiveness */
 @media (max-width: 768px) {
     header {
