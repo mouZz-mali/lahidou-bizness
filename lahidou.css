@@ -28,6 +28,11 @@ header h1 {
     height: auto;
 }
 
+header:hover {
+    box-shadow: 0 0 40px 0 #931c09a0;
+    transition: box-shadow 0.5s;
+}
+
 /* Navigation */
 nav ul {
     list-style: none;
@@ -98,6 +103,9 @@ section.produits {
     padding: 12px 8px 16px 8px;
     margin: 0 auto;
     transition: transform 0.25s, box-shadow 0.25s;
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    animation: fadeInUp 0.7s cubic-bezier(.23,1.02,.43,.99) forwards;
 }
 
 .produit:hover {
@@ -114,10 +122,12 @@ section.produits {
     margin: 0 auto 8px auto;
     display: block;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.35s cubic-bezier(.23,1.02,.43,.99), box-shadow 0.3s;
 }
 
 .produit:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08) rotate(-1deg);
+    box-shadow: 0 8px 32px rgba(147,28,9,0.13), 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .produit .nom-produit {
@@ -212,7 +222,16 @@ footer a:hover {
 .whatsapp-btn:hover, .call-btn:hover {
     background: #25d366;
     color: #fff;
-    transform: scale(1.05);
+    transform: scale(1.12) translateY(-2px);
+    box-shadow: 0 4px 16px rgba(37,211,102,0.13);
+}
+
+button[onclick*="scrollTo"] {
+    transition: background 0.3s, transform 0.3s;
+}
+button[onclick*="scrollTo"]:hover {
+    background: #25d366;
+    transform: scale(1.15) rotate(-10deg);
 }
 
 /* Responsiveness */
@@ -293,4 +312,25 @@ footer a:hover {
         font-size: 0.9em;
         padding: 10px 2px;
     }
+}
+
+.produit:nth-child(1) { animation-delay: 0.05s; }
+.produit:nth-child(2) { animation-delay: 0.15s; }
+.produit:nth-child(3) { animation-delay: 0.25s; }
+.produit:nth-child(4) { animation-delay: 0.35s; }
+.produit:nth-child(5) { animation-delay: 0.45s; }
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+section.produits h1, section.produits h2 {
+    animation: fadeInTitle 1.2s cubic-bezier(.23,1.02,.43,.99);
+    letter-spacing: 1px;
+    color: #931c09;
+}
+@keyframes fadeInTitle {
+    from { opacity: 0; transform: translateY(-30px) scale(0.95);}
+    to { opacity: 1; transform: translateY(0) scale(1);}
 }
