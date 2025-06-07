@@ -76,6 +76,13 @@ nav ul li a:hover::after {
     padding: 50px 20px;
 }
 
+section.produits {
+    margin-bottom: 40px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 2fr)); /* Réduit la taille des produits */
@@ -99,9 +106,12 @@ nav ul li a:hover::after {
 
 .produit img {
     width: 100%;
-    height: auto;
+    height: 180px;
+    object-fit: cover;
     border-bottom: 5px solid #f7f7f7;
     transition: transform 0.3s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 .produit:hover img {
@@ -233,7 +243,8 @@ footer a:hover {
     }
     .grid-container {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 12px;
+        padding: 5px;
     }
     .produit {
         padding: 5px;
@@ -241,6 +252,12 @@ footer a:hover {
     .produit img {
         max-width: 100%;
         height: auto;
+    }
+    .produit img {
+        height: 140px;
+    }
+    .nom-produit, .prix-produit, .desc-produit {
+        font-size: 1em;
     }
     .whatsapp-btn, .call-btn {
         font-size: 0.95em;
