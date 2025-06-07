@@ -116,13 +116,15 @@ section.produits {
 .produit img {
     width: 100%;
     max-width: 180px;
+    min-width: 120px;
     height: 140px;
-    object-fit: cover;
+    min-height: 100px;
+    object-fit: contain; /* ou 'cover' si tu préfères remplir */
     border-radius: 10px;
     margin: 0 auto 8px auto;
     display: block;
+    background: #f7f7f7;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    transition: transform 0.35s cubic-bezier(.23,1.02,.43,.99), box-shadow 0.3s;
 }
 
 .produit:hover img {
@@ -237,9 +239,12 @@ button[onclick*="scrollTo"]:hover {
 /* Chameleon Animation */
 #chameleon-anim {
     position: fixed;
-    top: 24px;
-    right: 24px;
+    top: 50%;
+    left: -250px; /* Commence hors écran à gauche */
+    transform: translateY(-50%);
     z-index: 9999;
+    display: flex;
+    align-items: center;
     pointer-events: none;
     transition: opacity 0.6s;
     opacity: 1;
@@ -251,10 +256,20 @@ button[onclick*="scrollTo"]:hover {
 }
 
 #chameleon-img {
-    width: 60px;
+    width: 180px; /* GROS caméléon */
     height: auto;
-    position: relative;
     z-index: 2;
+}
+
+#chameleon-tongue {
+    width: 0;
+    height: 18px;
+    background: linear-gradient(90deg, #ffb3b3 60%, #ff4d4d 100%);
+    border-radius: 9px;
+    margin-left: -30px;
+    margin-top: 40px;
+    transition: width 0.5s cubic-bezier(.23,1.02,.43,.99);
+    box-shadow: 0 2px 8px #ffb3b3a0;
 }
 
 /* Responsiveness */
@@ -292,8 +307,12 @@ button[onclick*="scrollTo"]:hover {
         height: 120px;
     }
     .whatsapp-btn, .call-btn {
-        font-size: 0.97em;
-        padding: 5px 8px;
+        font-size: 0.93em;
+        padding: 4px 7px;
+    }
+    .whatsapp-btn img, .call-btn img {
+        width: 15px;
+        height: 15px;
     }
 }
 
