@@ -17,9 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
     
     setTimeout(() => {
         const tongue = document.getElementById('chameleon-tongue');
+        const chameleon = document.getElementById('chameleon-anim');
         tongue.style.width = "160px"; // La langue sort
         setTimeout(() => {
             tongue.style.width = "0"; // La langue rentre
+            setTimeout(() => {
+                chameleon.classList.add('hide'); // Caméléon disparaît
+            }, 700); // Attend que la langue rentre
         }, 1200);
     }, 800); // Délai après chargement
 });
