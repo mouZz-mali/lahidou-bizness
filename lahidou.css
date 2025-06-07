@@ -244,22 +244,22 @@ button[onclick*="scrollTo"]:hover {
     display: flex;
     align-items: center;
     pointer-events: none;
-    transition: opacity 0.6s;
+    transition: opacity 0.9s;
     opacity: 1;
 }
 
 #chameleon-anim.hide {
     opacity: 0;
-    transition: opacity 0.6s;
+    transition: opacity 0.9s;
 }
 
 #chameleon-img {
-    width: 180px; /* GROS caméléon */
+    width: 200px; /* GROS caméléon */
     height: auto;
     z-index: 2;
 }
 
-#chameleon-tongue {
+/* #chameleon-tongue {
     width: 0;
     height: 18px;
     background: linear-gradient(90deg, #ffb3b3 60%, #ff4d4d 100%);
@@ -268,7 +268,7 @@ button[onclick*="scrollTo"]:hover {
     margin-top: 40px;
     transition: width 0.5s cubic-bezier(.23,1.02,.43,.99);
     box-shadow: 0 2px 8px #ffb3b3a0;
-}
+} */
 
 /* Responsiveness */
 @media (max-width: 768px) {
