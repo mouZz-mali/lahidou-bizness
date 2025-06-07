@@ -30,7 +30,6 @@
             <div class="produit accueil">
                 <img src="images/lunette (5).jpg" alt="Produit vedette">
                 <div class="nom-produit">Lunette de soleil</div>
-                <div class="prix-produit">8 000 FCFA</div>
                 <a class="whatsapp-btn" href="https://wa.me/22378714579?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20produit%20LAHIDOU%20BIZNESS" target="_blank">
                     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px;vertical-align:middle;"> WhatsApp
                 </a>
@@ -38,7 +37,6 @@
             <div class="produit accueil">
                 <img src="images/mocassin (8).jpg" alt="Produit vedette">
                 <div class="nom-produit">Mocassin cuir</div>
-                <div class="prix-produit">15 000 FCFA</div>
                 <a class="whatsapp-btn" href="https://wa.me/22378714579?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20produit%20LAHIDOU%20BIZNESS" target="_blank">
                     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px;vertical-align:middle;"> WhatsApp
                 </a>
@@ -46,7 +44,6 @@
             <div class="produit accueil">
                 <img src="images/tissu (14).jpg" alt="Produit vedette">
                 <div class="nom-produit">Tissu africain</div>
-                <div class="prix-produit">5 000 FCFA</div>
                 <a class="whatsapp-btn" href="https://wa.me/22378714579?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20produit%20LAHIDOU%20BIZNESS" target="_blank">
                     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px;vertical-align:middle;"> WhatsApp
                 </a>
@@ -54,7 +51,6 @@
             <div class="produit accueil">
                 <img src="images/survette (12).jpg" alt="Produit vedette">
                 <div class="nom-produit">Survêtement sport</div>
-                <div class="prix-produit">12 000 FCFA</div>
                 <a class="whatsapp-btn" href="https://wa.me/22378714579?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20produit%20LAHIDOU%20BIZNESS" target="_blank">
                     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px;vertical-align:middle;"> WhatsApp
                 </a>
@@ -62,7 +58,6 @@
             <div class="produit accueil">
                 <img src="images/robe (2).jpg" alt="Produit vedette">
                 <div class="nom-produit">Robe élégante</div>
-                <div class="prix-produit">10 000 FCFA</div>
                 <a class="whatsapp-btn" href="https://wa.me/22378714579?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20ce%20produit%20LAHIDOU%20BIZNESS" target="_blank">
                     <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px;vertical-align:middle;"> WhatsApp
                 </a>
@@ -586,5 +581,80 @@
         <p>&copy; 2025 LAHIDOU BIZNESS - Pour tout vos besoins de tout article de tout genre <br>Contact: +223 78 71 45 79/ +223 62 09 73 49</p>
     </footer>
     <button onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:30px;right:30px;background:#931c09;color:#fff;border:none;border-radius:50%;width:50px;height:50px;font-size:1.5em;cursor:pointer;z-index:1000;">↑</button>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Liste des produits en vedette (modifiable facilement)
+    let produitsVedette = [
+        {
+            nom: "Lunette de soleil",
+            image: "images/lunette (5).jpg"
+        },
+        {
+            nom: "Mocassin cuir",
+            image: "images/mocassin (8).jpg"
+        },
+        {
+            nom: "Tissu africain",
+            image: "images/tissu (14).jpg"
+        },
+        {
+            nom: "Survêtement sport",
+            image: "images/survette (12).jpg"
+        },
+        {
+            nom: "Robe élégante",
+            image: "images/robe (2).jpg"
+        }
+    ];
+
+    const grid = document.querySelector("#accueil .grid-container");
+
+    // Affiche les produits
+    function afficherProduits() {
+        grid.innerHTML = "";
+        produitsVedette.forEach((produit, index) => {
+            const div = document.createElement("div");
+            div.className = "produit accueil";
+            div.innerHTML = `
+                <img src="${produit.image}" alt="${produit.nom}">
+                <div class="nom-produit">${produit.nom}</div>
+                <a class="whatsapp-btn" href="https://wa.me/22378714579?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20${encodeURIComponent(produit.nom)}%20LAHIDOU%20BIZNESS" target="_blank">
+                    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px;vertical-align:middle;"> WhatsApp
+                </a>
+                <button onclick="supprimerProduit(${index})" style="margin-top:8px;background:#e74c3c;color:#fff;border:none;border-radius:12px;padding:4px 12px;cursor:pointer;">Supprimer</button>
+            `;
+            grid.appendChild(div);
+        });
+    }
+
+    // Ajouter un produit
+    window.ajouterProduit = function() {
+        const nom = prompt("Nom du produit :");
+        const image = prompt("Chemin de l'image (ex: images/monimage.jpg) :");
+        if(nom && image) {
+            produitsVedette.push({nom, image});
+            afficherProduits();
+        }
+    };
+
+    // Supprimer un produit
+    window.supprimerProduit = function(index) {
+        if(confirm("Supprimer ce produit ?")) {
+            produitsVedette.splice(index, 1);
+            afficherProduits();
+        }
+    };
+
+    // Affiche les produits au chargement
+    afficherProduits();
+
+    // Ajoute le bouton d'ajout
+    const btnAjout = document.createElement("button");
+    btnAjout.textContent = "Ajouter un produit";
+    btnAjout.style = "margin:20px auto;display:block;background:#931c09;color:#fff;border:none;border-radius:20px;padding:10px 24px;font-size:1em;cursor:pointer;";
+    btnAjout.onclick = window.ajouterProduit;
+    document.querySelector("#accueil").insertBefore(btnAjout, grid);
+});
+</script>
 </body>
 </html>
