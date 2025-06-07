@@ -116,15 +116,13 @@ section.produits {
 .produit img {
     width: 100%;
     max-width: 180px;
-    min-width: 120px;
     height: 140px;
-    min-height: 100px;
-    object-fit: contain; /* ou 'cover' si tu préfères remplir */
+    object-fit: cover;
     border-radius: 10px;
     margin: 0 auto 8px auto;
     display: block;
-    background: #f7f7f7;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.35s cubic-bezier(.23,1.02,.43,.99), box-shadow 0.3s;
 }
 
 .produit:hover img {
