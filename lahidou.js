@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Animation caméléon qui traverse l'écran, lèche, puis s'en va
     const chameleon = document.getElementById('chameleon-anim');
-    const tongue = document.getElementById('chameleon-tongue');
+    // const tongue = document.getElementById('chameleon-tongue');
     // Arrivée du caméléon au centre
     setTimeout(() => {
         chameleon.style.transition = "left 1.2s cubic-bezier(.23,1.02,.43,.99)";
