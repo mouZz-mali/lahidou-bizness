@@ -366,3 +366,40 @@ section.produits h1, section.produits h2 {
     from { opacity: 0; transform: translateY(-30px) scale(0.95);}
     to { opacity: 1; transform: translateY(0) scale(1);}
 }
+.whatsapp-btn, .call-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: 500;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.92em;
+    margin-top: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s;
+}
+
+.whatsapp-btn:hover, .call-btn:hover {
+    background-color: #e0ffe8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transform: translateY(-1px);
+}
+
+.whatsapp-btn img, .call-btn img {
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+}
+
+@media (max-width: 600px) {
+    .whatsapp-btn, .call-btn {
+        width: 100%;
+        padding: 10px 14px;
+        font-size: 0.95em;
+    }
+}
+
