@@ -236,7 +236,7 @@ button[onclick*="scrollTo"]:hover {
 
 /* Chameleon Animation */
 #chameleon-anim {
-    position: fixed;
+    /* position: fixed; */
     top: 50%;
     left: -250px; /* Commence hors écran à gauche */
     transform: translateY(-50%);
