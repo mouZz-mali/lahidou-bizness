@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
             callLink: 'tel:+22378714579'
         },
         {
-            nom: 'Vetements dréap',
+            nom: 'Vetements dreap',
             image: 'images/dreep 8.jpg', 
             description: 'Des habits pour etre dreap on dreap.',
             prix: '30.000 F', // MODIFIEZ LE PRIX ICI
