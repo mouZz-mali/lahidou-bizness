@@ -135,9 +135,11 @@ nav ul li a:hover::after {
 
 .produit img {
     width: 100%;
-    max-width: 150px;
-    height: 120px;
-    object-fit: cover;
+    /* Removed max-width to allow more flexibility for different image aspect ratios */
+    /* Removed fixed height to prevent cropping */
+    height: auto; /* Ensures the aspect ratio is maintained */
+    max-height: 150px; /* Optional: Sets a maximum height if you want to limit image size */
+    object-fit: contain; /* Changed from 'cover' to 'contain' to prevent image cropping */
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -174,6 +176,7 @@ nav ul li a:hover::after {
     cursor: pointer;
     text-decoration: none;
     transition: background 0.3s, transform 0.3s;
+    margin-top: 5px; /* Added small margin for better spacing between buttons */
 }
 
 .whatsapp-btn img, .call-btn img {
@@ -274,8 +277,9 @@ footer a:hover {
         gap: 15px;
     }
     .produit img {
-        max-width: 120px;
-        height: 100px;
+        /* Adjusted max-width for smaller screens, height remains auto */
+        max-width: 100%; /* Ensure images don't overflow their containers */
+        max-height: 120px; /* Optional: Adjust max-height for smaller screens if needed */
     }
 }
 
@@ -298,15 +302,15 @@ footer a:hover {
     }
     .produit img {
         max-width: 100%;
-        height: 80px;
+        max-height: 100px; /* Further adjust max-height for very small screens */
     }
     .whatsapp-btn, .call-btn, .ajouter-panier {
-        width: 100%;
-        padding: 8px;
-        font-size: 0.85em;
-    }
-    #chameleon-img {
-        width: 80px;
+        width: 100%; /* Make buttons full width for mobile */
+        padding: 10px; /* Slightly increased padding for better tap target */
+        font-size: 0.9em; /* Maintained font size for readability */
+        display: block; /* Ensure buttons stack vertically */
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
