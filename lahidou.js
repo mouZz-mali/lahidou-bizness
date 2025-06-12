@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         {
             nom: 'Maillot de qualité',
-            image: 'images/maillot 7.jpg', // Exemple, à remplacer
+            image: 'images/maillot 8.jpg', // Exemple, à remplacer
             description: 'Des pièces uniques et de qualites, Vous attendez quoi pour appeler.',
             prix: '12.000 F', // MODIFIEZ LE PRIX ICI
             whatsappLink: 'https://wa.me/22378714579?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20les%20Bijoux%20Artisanaux%20LAHIDOU%20BIZNESS',
