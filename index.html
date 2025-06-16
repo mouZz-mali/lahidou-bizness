@@ -1278,97 +1278,10 @@
             Livraison rapide partout au Mali. Satisfaction garantie !
         </p>
     </section>
-
     <footer>
-        <p>&copy; 2025 LAHIDOU BIZNESS - Pour tout vos besoins de tout article de tout genre <br>Contact: +223 78 71 45 79/ +223 62 09 73 49 <br><h5>Site fait par mouZz-mali : +223 78 18 34 94/ mokoucool@gmail.com</h5></p>
-
+        <p>&copy; 2025 LAHIDOU BIZNESS - Pour tout vos besoins de tout article de tout genre <br>Contact: +223 78 71 45 79/ +223 62 09 73 49 <br>
+            <h5>Site fait par mouZz-mali : +223 78 18 34 94/ mokoucool@gmail.com</h5></p>
     </footer>
-    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" style="position:fixed;bottom:30px;right:30px;background:#931c09;color:#fff;border:none;border-radius:50%;width:50px;height:50px;font-size:1.5em;cursor:pointer;z-index:1000;">↑</button>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    // Liste des produits en vedette (modifiable facilement)
-    let produitsVedette = [
-        {
-            nom: "Lunette de soleil",
-            image: "images/lunette (5).jpg",
-            prix: "8 000 FCFA",
-            desc: "Protection UV400, design tendance."
-        },
-        {
-            nom: "Mocassin cuir",
-            image: "images/mocassin (8).jpg",
-            prix: "15 000 FCFA",
-            desc: "Cuir véritable, confortable et élégant."
-        },
-        {
-            nom: "Tissu africain",
-            image: "images/tissu (14).jpg",
-            prix: "5 000 FCFA",
-            desc: "Tissu, motifs variés."
-        },
-        {
-            nom: "Survêtement sport",
-            image: "images/survette (12).jpg",
-            prix: "12 000 FCFA",
-            desc: "Pour homme/femme, plusieurs tailles."
-        },
-        {
-            nom: "Robe élégante",
-            image: "images/robe (2).jpg",
-            prix: "10 000 FCFA",
-            desc: "Robe chic, idéale pour les sorties."
-        }
-    ];
-
-    const grid = document.querySelector("#accueil .grid-container");
-
-    // Affiche les produits
-    function afficherProduits() {
-        grid.innerHTML = "";
-        produitsVedette.forEach((produit) => {
-            const div = document.createElement("div");
-            div.className = "produit accueil";
-            div.innerHTML = `
-                <img src="${produit.image}" alt="${produit.nom}">
-                <div class="nom-produit">${produit.nom}</div>
-                <div class="prix-produit">${produit.prix}</div>
-                <div class="desc-produit" style="font-size:0.95em;color:#555;margin-bottom:8px;">${produit.desc}</div>
-                <a class="whatsapp-btn" href="https://wa.me/22378714579?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20${encodeURIComponent(produit.nom)}%20LAHIDOU%20BIZNESS" target="_blank">
-                    <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp" style="width:20px;vertical-align:middle;"> WhatsApp
-                </a>
-            `;
-            grid.appendChild(div);
-        });
-    }
-
-    // Ajouter un produit
-    window.ajouterProduit = function() {
-        const nom = prompt("Nom du produit :");
-        const image = prompt("Chemin de l'image (ex: images/monimage.jpg) :");
-        if(nom && image) {
-            produitsVedette.push({nom, image});
-            afficherProduits();
-        }
-    };
-
-    // Supprimer un produit
-    window.supprimerProduit = function(index) {
-        if(confirm("Supprimer ce produit ?")) {
-            produitsVedette.splice(index, 1);
-            afficherProduits();
-        }
-    };
-
-    // Affiche les produits au chargement
-    afficherProduits();
-
-    // Ajoute le bouton d'ajout
-    // const btnAjout = document.createElement("button");
-    // btnAjout.textContent = "Ajouter un produit";
-    // btnAjout.style = "margin:20px auto;display:block;background:#931c09;color:#fff;border:none;border-radius:20px;padding:10px 24px;font-size:1em;cursor:pointer;";
-    // btnAjout.onclick = window.ajouterProduit;
-    // document.querySelector("#accueil").insertBefore(btnAjout, grid);
-});
 </script>
 </body>
 </html>
