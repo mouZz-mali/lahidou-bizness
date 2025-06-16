@@ -227,10 +227,10 @@ footer a:hover {
 
 #chameleon-tongue {
     width: 0;
-    height: 12px;
+    height: 5px;
     background: linear-gradient(90deg, #ffb3b3 60%, #ff4d4d 100%);
     border-radius: 6px;
-    margin-left: -20px;
+    margin-left: -8px;
     transition: width 0.4s cubic-bezier(.23,1.02,.43,.99);
 }
 
