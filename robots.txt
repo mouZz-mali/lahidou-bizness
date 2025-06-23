@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://mouzz-mali.github.io/lahidou-bizness/sitemap.xml
