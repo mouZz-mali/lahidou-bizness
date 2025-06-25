@@ -1,0 +1,23 @@
+# Fichiers système Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Fichiers temporaires
+*.tmp
+*.temp
+*~
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+
+# Logs
+*.log
+
+# Fichiers de configuration IDE
+.vscode/
+.idea/
+
+# Fichiers de cache
+.cache/ 
